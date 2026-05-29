@@ -18,7 +18,7 @@ app.use(
     origin: [
       "http://localhost:5173",
       "https://stocksync-iota.vercel.app",
-      "https://stocksync-inventory-management-2.onrender.com",
+      "https://stocksync-inventory-management-04el.onrender.com",
     ],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
