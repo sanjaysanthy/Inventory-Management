@@ -1,10 +1,12 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || "http://localhost:8082/api",
+  baseURL:
+    import.meta.env.VITE_API_URL ||
+    "http://localhost:8082",
 });
 
-// Request Interceptor: Attach the token to every outgoing request
+// Attach token
 api.interceptors.request.use(
   (config) => {
     const userInfo = localStorage.getItem("userInfo");
@@ -16,20 +18,18 @@ api.interceptors.request.use(
 
     return config;
   },
-  (error) => {
-    return Promise.reject(error);
-  }
+  (error) => Promise.reject(error)
 );
 
-// Response Interceptor: Handle global errors (like expired tokens)
+// Handle expired token
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response && error.response.status === 401) {
-      // Clear storage and redirect to login if token is invalid/expired
       localStorage.removeItem("userInfo");
       window.location.href = "/login";
     }
+
     return Promise.reject(error);
   }
 );
