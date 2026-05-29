@@ -1,0 +1,21 @@
+{
+  "name": "stocksync-main",
+  "version": "1.0.0",
+  "description": "1. cd client\r 2. npm install\r 3. npm run dev",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanjaysanthy/Inventory-Management.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/sanjaysanthy/Inventory-Management/issues"
+  },
+  "homepage": "https://github.com/sanjaysanthy/Inventory-Management#readme"
+}
